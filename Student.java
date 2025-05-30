@@ -3,14 +3,12 @@ class Student {
     private String name;
     private int daysAttended;
 
-    // Constructor
  Student(int studentId, String name, int daysAttended) {
         this.studentId = studentId;
         this.name = name;
         this.daysAttended = daysAttended;
     }
-
-    // Getters
+	
    int getStudentId() {
         return studentId;
     }
@@ -22,8 +20,7 @@ class Student {
     int getDaysAttended() {
         return daysAttended;
     }
-
-    // Setters
+	
     void setDaysAttended(int daysAttended) {
         this.daysAttended = daysAttended;
     }
@@ -64,9 +61,7 @@ class Classroom {
         System.out.println("\nStudent Details:");
         for (int i = 0; i < count; i++) {
             Student s = students[i];
-            System.out.println("ID: " + s.getStudentId() +
-                               ", Name: " + s.getName() +
-                               ", Days Attended: " + s.getDaysAttended());
+            System.out.println("ID: " + s.getStudentId() +", Name: " + s.getName() + ", Days Attended: " + s.getDaysAttended());
         }
     }
 }
@@ -74,21 +69,15 @@ class Classroom {
 class TestStudent {
     public static void main(String[] args) {
         Classroom classRoom = new Classroom();
-
-        // Add 3 students
+	    
         classRoom.addStudent(new Student(101, "Alice Smith", 12));
         classRoom.addStudent(new Student(102, "Bob Jones", 15));
         classRoom.addStudent(new Student(103, "Carol Lee", 10));
 
-        // Update Bob Jones attendance to 16
         classRoom.updateAttendance(102, 16);
 
-        // Attempt to update a non-existent student (ID 104)
-		classRoom.updateAttendance(104, 5);
+	classRoom.updateAttendance(104, 5);
 
-        // Display all student details
         classRoom.displayAllStudents();
     }
 }
-
-
